@@ -20,10 +20,13 @@ namespace Messaging.Core
 
         public static Sender Create(string connection)
         {
-            var uri = new Uri(connection);
+            return Create(new Uri(connection));
+        }
 
+        public static Sender Create(Uri uri)
+        {
             if (!_senderTypes.TryGetValue(uri.Scheme, out Type senderType))
-                throw new ArgumentException($"Invalid scheme on connection ({connection}).", nameof(connection));
+                throw new ArgumentException($"Invalid scheme on connection ({uri.OriginalString}).", nameof(uri));
 
             var sender = (Sender)Activator.CreateInstance(senderType, new object[] { uri });
 
@@ -53,6 +56,14 @@ namespace Messaging.Core
 
         internal virtual void OnBeforeEncode(Message message, MemoryStream stream)
         {
+            for (var i = 0; i < message.Arguments.Length; i++)
+            {
+                var receiver = message.Arguments[i] as ReceiverBase;
+                if (receiver!=null)
+                {
+                    message.Arguments[i] = new EndPoint { Uri = receiver.Listeners.First().Uri };
+                }
+            }
         }
 
         internal virtual void OnAfterEncode(Message message, MemoryStream stream)

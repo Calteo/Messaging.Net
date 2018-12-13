@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -27,6 +28,8 @@ namespace Messaging.Core
 
         internal override void Post(MemoryStream stream)
         {
+            Trace.WriteLine($"{Uri} - post - {stream.Length} bytes");
+
             if (!_tcpClient.Connected)
                 throw new Exception("not connected");
 
@@ -38,7 +41,9 @@ namespace Messaging.Core
             var tcpStream = _tcpClient.GetStream();
             tcpStream.Write(lengthBuffer, 0, lengthBuffer.Length);
             stream.WriteTo(tcpStream);
-            tcpStream.Flush();            
+            tcpStream.Flush();
+
+            Trace.WriteLine($"{Uri} - posted - {stream.Length} bytes");
         }
     }
 }

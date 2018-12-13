@@ -51,6 +51,16 @@ namespace Messaging.Core
                 Trace.WriteLine($"no handler for message '{message.Name}", $"ReceiverBase");
                 return;
             }
+
+            for (var i = 0; i < message.Arguments.Length; i++)
+            {
+                var endpoint = message.Arguments[i] as EndPoint;
+                if (endpoint != null)
+                {
+                    message.Arguments[i] = Sender.Create(endpoint.Uri);
+                }
+            }
+
             messageHandler.DynamicInvoke(message.Arguments);
         }
     }

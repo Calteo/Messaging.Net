@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonConnect = new System.Windows.Forms.Button();
             this.labelServer = new System.Windows.Forms.Label();
             this.textBoxServer = new System.Windows.Forms.TextBox();
             this.textBoxHello = new System.Windows.Forms.TextBox();
             this.labelHello = new System.Windows.Forms.Label();
             this.buttonSendHello = new System.Windows.Forms.Button();
-            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonSayHello = new System.Windows.Forms.Button();
+            this.textBoxSayHello = new System.Windows.Forms.TextBox();
+            this.labelSayHello = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +47,9 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel.Controls.Add(this.labelSayHello, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.textBoxSayHello, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.buttonSayHello, 2, 2);
             this.tableLayoutPanel.Controls.Add(this.buttonConnect, 2, 0);
             this.tableLayoutPanel.Controls.Add(this.labelServer, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.textBoxServer, 1, 0);
@@ -54,12 +60,24 @@
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 3;
+            this.tableLayoutPanel.RowCount = 4;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(679, 283);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonConnect.Location = new System.Drawing.Point(562, 3);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(114, 28);
+            this.buttonConnect.TabIndex = 5;
+            this.buttonConnect.Text = "Connect";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.ButtonConnectClick);
             // 
             // labelServer
             // 
@@ -109,16 +127,34 @@
             this.buttonSendHello.UseVisualStyleBackColor = true;
             this.buttonSendHello.Click += new System.EventHandler(this.ButtonSendHelloClick);
             // 
-            // buttonConnect
+            // buttonSayHello
             // 
-            this.buttonConnect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonConnect.Location = new System.Drawing.Point(562, 3);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(114, 28);
-            this.buttonConnect.TabIndex = 5;
-            this.buttonConnect.Text = "Connect";
-            this.buttonConnect.UseVisualStyleBackColor = true;
-            this.buttonConnect.Click += new System.EventHandler(this.ButtonConnectClick);
+            this.buttonSayHello.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSayHello.Location = new System.Drawing.Point(562, 71);
+            this.buttonSayHello.Name = "buttonSayHello";
+            this.buttonSayHello.Size = new System.Drawing.Size(114, 28);
+            this.buttonSayHello.TabIndex = 6;
+            this.buttonSayHello.Text = "Send";
+            this.buttonSayHello.UseVisualStyleBackColor = true;
+            this.buttonSayHello.Click += new System.EventHandler(this.ButtonSayHelloClick);
+            // 
+            // textBoxSayHello
+            // 
+            this.textBoxSayHello.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSayHello.Location = new System.Drawing.Point(123, 71);
+            this.textBoxSayHello.Name = "textBoxSayHello";
+            this.textBoxSayHello.Size = new System.Drawing.Size(433, 22);
+            this.textBoxSayHello.TabIndex = 7;
+            // 
+            // labelSayHello
+            // 
+            this.labelSayHello.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSayHello.Location = new System.Drawing.Point(3, 68);
+            this.labelSayHello.Name = "labelSayHello";
+            this.labelSayHello.Size = new System.Drawing.Size(114, 34);
+            this.labelSayHello.TabIndex = 8;
+            this.labelSayHello.Text = "SayHello";
+            this.labelSayHello.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ClientForm
             // 
@@ -146,6 +182,9 @@
         private System.Windows.Forms.Label labelHello;
         private System.Windows.Forms.Button buttonSendHello;
         private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Label labelSayHello;
+        private System.Windows.Forms.TextBox textBoxSayHello;
+        private System.Windows.Forms.Button buttonSayHello;
     }
 }
 

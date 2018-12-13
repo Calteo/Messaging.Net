@@ -27,5 +27,11 @@ namespace Messaging.Server
         {
             textBoxMessages.Text += $"{DateTime.Now:HH:mm:ss}: Hello '{text}'" + Environment.NewLine;
         }
+
+        public void SayHello(string text)
+        {
+            textBoxMessages.Text += $"{DateTime.Now:HH:mm:ss}: SayHello '{text}'" + Environment.NewLine;
+            MessageBox.Show(this, $"Say hello to {text}.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
