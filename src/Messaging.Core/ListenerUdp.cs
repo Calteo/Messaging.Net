@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Messaging.Core
@@ -39,7 +36,6 @@ namespace Messaging.Core
                     Trace.WriteLine(exception.Message, "ListenerTcp.Start");
                 }
             }
-
         }
 
         internal override void Stop()
