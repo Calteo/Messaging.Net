@@ -21,10 +21,10 @@ namespace Messaging.Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBoxServer.Text = $"tcp://{Dns.GetHostName()}:55833/server";
+            textBoxServer.Text = $"udp://{Dns.GetHostName()}:55833";
 
             Receiver = new ClientReceiver(this);
-            Receiver.AddListener($"tcp://{Dns.GetHostName()}:55933/client");
+            Receiver.AddListener($"udp://{Dns.GetHostName()}:55933");
             Receiver.Start();
         }
 
@@ -50,9 +50,19 @@ namespace Messaging.Client
 
         private void ButtonConnectClick(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            Sender = Sender.Create(textBoxServer.Text);
-            Cursor = Cursors.Default;
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                Sender = Sender.Create(textBoxServer.Text);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
 
         public void GotAnswer(string text)

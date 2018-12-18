@@ -32,6 +32,7 @@
             this.labelServer = new System.Windows.Forms.Label();
             this.textBoxServer = new System.Windows.Forms.TextBox();
             this.textBoxMessages = new System.Windows.Forms.TextBox();
+            this.textBoxUdp = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,17 +40,20 @@
             // 
             this.tableLayoutPanel.ColumnCount = 2;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.85895F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.14104F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.14105F));
+            this.tableLayoutPanel.Controls.Add(this.textBoxUdp, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.labelServer, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.textBoxServer, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.textBoxMessages, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.textBoxMessages, 1, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 2;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.21321F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.78679F));
+            this.tableLayoutPanel.RowCount = 3;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(660, 260);
             this.tableLayoutPanel.TabIndex = 0;
             // 
@@ -76,14 +80,23 @@
             // textBoxMessages
             // 
             this.textBoxMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxMessages.Location = new System.Drawing.Point(127, 37);
+            this.textBoxMessages.Location = new System.Drawing.Point(127, 71);
             this.textBoxMessages.Multiline = true;
             this.textBoxMessages.Name = "textBoxMessages";
             this.textBoxMessages.ReadOnly = true;
             this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxMessages.Size = new System.Drawing.Size(530, 220);
+            this.textBoxMessages.Size = new System.Drawing.Size(530, 186);
             this.textBoxMessages.TabIndex = 2;
             this.textBoxMessages.WordWrap = false;
+            // 
+            // textBoxUdp
+            // 
+            this.textBoxUdp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxUdp.Location = new System.Drawing.Point(127, 37);
+            this.textBoxUdp.Name = "textBoxUdp";
+            this.textBoxUdp.ReadOnly = true;
+            this.textBoxUdp.Size = new System.Drawing.Size(530, 22);
+            this.textBoxUdp.TabIndex = 3;
             // 
             // ServerForm
             // 
@@ -108,6 +121,7 @@
         private System.Windows.Forms.Label labelServer;
         private System.Windows.Forms.TextBox textBoxServer;
         private System.Windows.Forms.TextBox textBoxMessages;
+        private System.Windows.Forms.TextBox textBoxUdp;
     }
 }
 

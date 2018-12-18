@@ -17,8 +17,9 @@ namespace Messaging.Server
         private void ServerFormLoad(object sender, System.EventArgs e)
         {
             Receiver = new ServerReceiver(this);
-            var listener = Receiver.AddListener($"tcp://{Dns.GetHostName()}:55833/server");
-            textBoxServer.Text = listener.Uri.ToString();
+            
+            textBoxServer.Text = Receiver.AddListener($"tcp://{Dns.GetHostName()}:55833").Uri.ToString();
+            textBoxUdp.Text = Receiver.AddListener($"udp://{Dns.GetHostName()}:55833").Uri.ToString();
 
             Receiver.Start();
         }

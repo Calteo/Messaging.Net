@@ -11,16 +11,10 @@ using System.Threading.Tasks;
 namespace Messaging.Core
 {
     [Scheme("tcp")]
-    public class SenderTcp : Sender
+    public class SenderTcp : SenderSocket
     {
         public SenderTcp(Uri uri) : base(uri)
         {
-            if (uri.Host == "")
-                throw new ArgumentException($"No host given on connection ({uri.OriginalString}).", nameof(uri));
-
-            if (uri.IsDefaultPort)
-                throw new ArgumentException($"No port given on connection ({uri.OriginalString}).", nameof(uri));
-
             _tcpClient = new TcpClient(uri.Host, uri.Port);
         }
 

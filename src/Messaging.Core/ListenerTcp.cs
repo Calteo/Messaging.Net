@@ -10,41 +10,11 @@ using System.Threading.Tasks;
 namespace Messaging.Core
 {
     [Scheme("tcp")]
-    class ListenerTcp : Listener
-    {
-        private static readonly IPEndPoint DefaultLoopbackEndpoint = new IPEndPoint(IPAddress.Loopback, 0);
-
-        public ListenerTcp(Uri uri) : base(uri)
+    class ListenerTcp : ListenerSocket
+    {        
+        public ListenerTcp(Uri uri) : base(uri, SocketType.Stream, ProtocolType.Tcp)
         {
-            if (IPAddress.TryParse(uri.Host, out IPAddress address))
-                throw new ArgumentException($"Invalid address on connection ({uri.OriginalString}).", nameof(uri));
-                            
-            if (address == null)
-            {
-                address = Dns.GetHostAddresses(uri.Host).FirstOrDefault(a => a.AddressFamily == AddressFamily.InterNetwork);
-            }
-
-            if (address == null)
-                throw new ArgumentException($"Can not resolve address on connection ({uri.OriginalString}).", nameof(uri));
-
-            if (uri.IsDefaultPort)
-            {
-                using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
-                {
-                    socket.Bind(DefaultLoopbackEndpoint);
-                    var port = ((IPEndPoint)socket.LocalEndPoint).Port;
-
-                    _tcpListener = new TcpListener(address, port);
-
-                    var builder = new UriBuilder(uri);
-                    builder.Port = port;
-                    Uri = builder.Uri;
-                }
-            }
-            else
-            {
-                _tcpListener = new TcpListener(address, uri.Port);
-            }                   
+            _tcpListener = new TcpListener(EndPoint);
         }
 
         private TcpListener _tcpListener;
