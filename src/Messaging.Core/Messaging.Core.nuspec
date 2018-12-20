@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Messaging.NET</id>
+    <version>1.0.0</version>
+    <title>Messaging.NET</title>
+    <authors>Calteo</authors>
+    <owners>Calteo</owners>
+    <licenseUrl>hthttps://github.com/Calteo/Messaging.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Calteo/Messaging.Net</projectUrl>
+    <iconUrl>https://github.com/Calteo/Messaging.Net/app.ico</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Compoment for easy interprocess communication</description>
+    <releaseNotes>First beta</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>interprocess communication tcp udp</tags>
+  </metadata>
+</package>

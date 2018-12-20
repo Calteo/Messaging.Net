@@ -60,5 +60,8 @@
     <Compile Include="SenderTcp.cs" />
     <Compile Include="SenderUdp.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Messaging.Core.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
