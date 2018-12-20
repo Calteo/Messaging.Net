@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Messaging.NET</id>
-    <version>1.0.0</version>
+    <version>$version$</version>
     <title>Messaging.NET</title>
     <authors>Calteo</authors>
     <owners>Calteo</owners>
