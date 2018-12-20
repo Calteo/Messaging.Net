@@ -6,9 +6,9 @@
     <title>Messaging.NET</title>
     <authors>Calteo</authors>
     <owners>Calteo</owners>
-    <licenseUrl>hthttps://github.com/Calteo/Messaging.Net/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Calteo/Messaging.Net/blob/master/LICENSE</licenseUrl>    
     <projectUrl>https://github.com/Calteo/Messaging.Net</projectUrl>
-    <iconUrl>https://github.com/Calteo/Messaging.Net/app.ico</iconUrl>
+    <iconUrl>https://github.com/Calteo/Messaging.Net/src/shared/app.ico</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Compoment for easy interprocess communication</description>
     <releaseNotes>First beta</releaseNotes>
