@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Messaging.Core
 {
@@ -44,7 +41,12 @@ namespace Messaging.Core
             Started = false;
         }
 
-        internal void OnReceived(Message message)
+        internal void DoReceive(Message message)
+        {
+            OnReceived(message);
+        }
+
+        protected virtual void OnReceived(Message message)
         {
             if (!Handlers.TryGetValue(message.Name, out Delegate messageHandler))
             {

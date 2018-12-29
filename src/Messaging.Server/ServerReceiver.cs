@@ -1,31 +1,28 @@
 ﻿using Messaging.Core;
+using Messaging.Forms;
 using System;
 
 namespace Messaging.Server
 {
-    class ServerReceiver : Receiver
+    class ServerReceiver : ControlReceiver
     {
-        public ServerReceiver(ServerForm form)
+        public ServerReceiver(ServerForm form) : base(form)
         {
             Form = form;
-            HelloAction = new Action<string>(Form.AddHello);
-            SayHelloAction = new Action<string>(Form.SayHello);
         }
 
         public ServerForm Form { get; private set; }
-        public Action<string> HelloAction { get; private set; }
-        public Action<string> SayHelloAction { get; private set; }
 
         [MessageHandler("hello")]
         private void Hello(string name)
         {
-            Form.BeginInvoke(HelloAction, new object[] { name });
+            Form.AddHello(name);
         }
 
         [MessageHandler("sayhello")]
         private void SayHello(string name, Sender replyTo)
         {
-            Form.Invoke(SayHelloAction, new object[] { name });
+            Form.SayHello(name);
             replyTo.Post("answer", $"Hello {name}.");
         }
     }

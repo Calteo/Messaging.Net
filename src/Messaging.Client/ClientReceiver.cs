@@ -1,23 +1,21 @@
 ﻿using Messaging.Core;
-using System;
+using Messaging.Forms;
 
 namespace Messaging.Client
 {
-    class ClientReceiver : Receiver
+    class ClientReceiver : ControlReceiver
     {
-        public ClientReceiver(ClientForm form)
+        public ClientReceiver(ClientForm form) : base(form)
         {
             Form = form;
-            AnswerAction = new Action<string>(Form.GotAnswer);
         }
 
         public ClientForm Form { get; private set; }
-        public Action<string> AnswerAction { get; private set; }
 
         [MessageHandler("answer")]
         private void Answer(string name)
         {
-            Form.BeginInvoke(AnswerAction, new object[] { name });
+            Form.GotAnswer(name);
         }
     }
 }

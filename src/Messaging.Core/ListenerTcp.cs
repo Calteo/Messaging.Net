@@ -87,7 +87,7 @@ namespace Messaging.Core
 
                             Trace.WriteLine($"{clientEndPoint} - message '{message.Name}' received", "ListenerTcp.HandleConnectionAsync");
 
-                            Receiver.OnReceived(message);
+                            Receiver.DoReceive(message);
                         }
                     }
                     else

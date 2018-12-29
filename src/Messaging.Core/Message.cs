@@ -3,7 +3,7 @@
 namespace Messaging.Core
 {
     [Serializable]
-    internal class Message
+    public class Message
     {
         public Message(string name, params object[] args)
         {

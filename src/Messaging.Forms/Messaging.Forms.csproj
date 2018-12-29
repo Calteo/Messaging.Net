@@ -4,11 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED5FCF2C-7012-4C75-B72B-C05D3DF75B1E}</ProjectGuid>
+    <ProjectGuid>{8D7760E5-FAFA-473E-B656-D07A047E145E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Messaging.Core</RootNamespace>
-    <AssemblyName>Messaging.Core</AssemblyName>
+    <RootNamespace>Messaging.Forms</RootNamespace>
+    <AssemblyName>Messaging.Forms</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,36 +32,31 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="EndPoint.cs" />
-    <Compile Include="Listener.cs" />
-    <Compile Include="ListenerSocket.cs" />
-    <Compile Include="ListenerUdp.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="SchemeAttribute.cs" />
-    <Compile Include="ListenerTcp.cs" />
-    <Compile Include="MessageHandlerAttribute.cs" />
-    <Compile Include="Receiver.cs" />
-    <Compile Include="ReceiverBase.cs" />
+    <Compile Include="ControlReceiver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sender.cs" />
-    <Compile Include="SenderSocket.cs" />
-    <Compile Include="SenderTcp.cs" />
-    <Compile Include="SenderUdp.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Messaging.Core.nuspec" />
+    <ProjectReference Include="..\Messaging.Core\Messaging.Core.csproj">
+      <Project>{ed5fcf2c-7012-4c75-b72b-c05d3df75b1e}</Project>
+      <Name>Messaging.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Messaging.Forms.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

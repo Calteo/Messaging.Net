@@ -60,7 +60,7 @@ namespace Messaging.Core
 
                 Trace.WriteLine($"{clientEndPoint} - message '{message.Name}' received", "ListenerUdp.HandleMessageAsync");
 
-                Receiver.OnReceived(message);
+                Receiver.DoReceive(message);
             }
             catch (Exception exception)
             {

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Messaging.NET (Forms)</id>
+    <version>$version$</version>
+    <title>Messaging.NET (Forms)</title>
+    <authors>Calteo</authors>
+    <owners>Calteo</owners>
+    <licenseUrl>https://github.com/Calteo/Messaging.Net/blob/master/LICENSE</licenseUrl>    
+    <projectUrl>https://github.com/Calteo/Messaging.Net</projectUrl>
+    <iconUrl>https://github.com/Calteo/Messaging.Net/src/shared/app.ico</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Compoment for easy interprocess communication with windows forms support</description>
+    <releaseNotes>First beta</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>interprocess communication tcp udp windows forms</tags>
+    <dependencies>
+      <dependency id="Messaging.NET" version="$version$" />
+    </dependencies>
+  </metadata>
+</package>

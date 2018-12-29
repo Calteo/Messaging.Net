@@ -88,6 +88,10 @@
       <Project>{ed5fcf2c-7012-4c75-b72b-c05d3df75b1e}</Project>
       <Name>Messaging.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Messaging.Forms\Messaging.Forms.csproj">
+      <Project>{8d7760e5-fafa-473e-b656-d07a047e145e}</Project>
+      <Name>Messaging.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
