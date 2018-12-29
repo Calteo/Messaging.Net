@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Messaging.NET (Forms)</id>
+    <id>Messaging.NET.Forms</id>
     <version>$version$</version>
     <title>Messaging.NET (Forms)</title>
     <authors>Calteo</authors>
