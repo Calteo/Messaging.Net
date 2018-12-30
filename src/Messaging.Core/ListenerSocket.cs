@@ -39,7 +39,7 @@ namespace Messaging.Core
                     Uri = builder.Uri;
                 }
             }
-            EndPoint = new IPEndPoint(address, uri.Port);
+            EndPoint = new IPEndPoint(address, Uri.Port);
         }
 
         public IPEndPoint EndPoint { get; private set; }

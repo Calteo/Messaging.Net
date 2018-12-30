@@ -19,7 +19,7 @@ namespace Messaging.Server
             Receiver = new ServerReceiver(this);
             
             textBoxServer.Text = Receiver.AddListener($"tcp://{Dns.GetHostName()}:55833").Uri.ToString();
-            textBoxUdp.Text = Receiver.AddListener($"udp://{Dns.GetHostName()}:55833").Uri.ToString();
+            textBoxUdp.Text = Receiver.AddListener($"udp://{Dns.GetHostName()}").Uri.ToString();
 
             Receiver.Start();
         }
