@@ -17,6 +17,9 @@ namespace Messaging.Core
                 var attribute = method.GetCustomAttribute<MessageHandlerAttribute>();
                 if (attribute != null)
                 {
+                    if (Handlers.ContainsKey(attribute.Name))
+                        throw new ArgumentException($"Message '{attribute.Name}' already registered.");
+
                     var handler = method.CreateDelegate(
                                     Expression.GetDelegateType(method.GetParameters()
                                     .Select(p => p.ParameterType).Concat(new[] { method.ReturnType }).ToArray()
